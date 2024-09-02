@@ -244,7 +244,7 @@ def main():
     metagraph_name_labels = []
     for c, p in zip(labels_dict["Cell Type"], labels_dict["Name"]):
         if c.startswith("Sanity"): continue
-        if c.startswith("BTO") or c.startswith("CCI"):
+        if c.startswith("cells") or c.startswith("CCI"):
             metagraph_celltype_labels.append(c)
             metagraph_name_labels.append(p)
         else:
