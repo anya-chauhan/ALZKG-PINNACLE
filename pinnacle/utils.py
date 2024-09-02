@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from collections import Counter
 import umap
-import umap.plot
+#import umap.plot
 from matplotlib import pyplot as plt
 import plotly.express as px
 
@@ -141,9 +141,9 @@ def combine_embed(ppi_embed, mg_embed, key, ppi_layers, metagraph, finetune_labe
     if len(mg_embed) > 0:
 
         # Set metagraph labels
-        labels_df["Cell Type"] = ["CCI_" + v if "BTO" not in v else v for k, v in key.items()]
-        mg_labels["Cell Type"] = [v if "BTO" not in v else v for k, v in key.items()]
-        labels_df["Name"] = ["CCI_" + v if "BTO" not in v else v for k, v in key.items()]
+        labels_df["Cell Type"] = ["CCI_" + v if "cells" not in v else v for k, v in key.items()]
+        mg_labels["Cell Type"] = [v if "cells" not in v else v for k, v in key.items()]
+        labels_df["Name"] = ["CCI_" + v if "cells" not in v else v for k, v in key.items()]
 
         labels_df["Degree"] = [100] * len(metagraph.nodes) # Artificially increase size
         labels_df["Relative Degree"] = [1] * len(metagraph.nodes)
