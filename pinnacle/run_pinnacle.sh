@@ -3,9 +3,9 @@
 conda activate pinnacle
 
 python train.py \
-        --G_f ../data/networks/global_ppi_edgelist.txt \
-        --ppi_dir ../data/networks/ppi_edgelists/ \
-        --mg_f ../data/networks/mg_edgelist.txt \
+        --G_f filtered_ppi.txt \
+        --ppi_dir ppi_edgelists/ \
+        --mg_f cluster_interactions_9_10.txt \
         --batch_size=8 \
         --dropout=0.6 \
         --feat_mat=1024 \
